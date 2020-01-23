@@ -11,7 +11,7 @@ import { createDecorator, mixins } from 'vue-class-component';
 const validationCreator = function () {
     const validations = this.$vnode.componentOptions.Ctor.options.__validations || {};
     const ret = { };
-    for (const k in validations) {
+    for (let k in validations) {
         if (!validations.hasOwnProperty(k)) continue;
         let val = validations[k];
         if (k === '__validations__') {
