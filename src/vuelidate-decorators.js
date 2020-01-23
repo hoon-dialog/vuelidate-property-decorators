@@ -62,7 +62,7 @@ const validationCreator = function () {
  *
  */
 export function Validations(): PropertyDecorator {
-    return createDecorator((componentOptions, k) => {
+    return createDecorator(function(componentOptions, k) {
         if (!componentOptions.__validations) {
             componentOptions.__validations = {};
         }
@@ -95,7 +95,7 @@ export function Validations(): PropertyDecorator {
  *     name = ''
  */
 export function Validate(rules: any): PropertyDecorator {
-    return createDecorator((componentOptions, k) => {
+    return createDecorator(function(componentOptions, k) {
         if (!componentOptions.__validations) {
             componentOptions.__validations = {};
         }
